@@ -63,6 +63,26 @@ a:hover { color: color-mix(in srgb, var(--accent-color), transparent 25%); }
 h1, h2, h3, h4, h5, h6 { color: var(--heading-color); font-family: var(--heading-font); }
 
 /*--------------------------------------------------------------
+# TEKS RATA KIRI-KANAN (JUSTIFY)
+# Hanya untuk paragraf panjang yang rata kiri.
+# Teks di tengah (subjudul hero, Hubungi Kami) tidak diubah.
+--------------------------------------------------------------*/
+.box-main-desc,
+.vision-desc,
+.mission-item p,
+.flip-card-back p,
+.product-card p,
+.detail-text,
+.detail-note,
+.product-hero p {
+  text-align: justify;
+  text-align-last: left;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+}
+
+/*--------------------------------------------------------------
 # HEADER (transparan di beranda, putih setelah keluar dari hero)
 --------------------------------------------------------------*/
 .header {
@@ -78,35 +98,27 @@ h1, h2, h3, h4, h5, h6 { color: var(--heading-color); font-family: var(--heading
   border-bottom: 1px solid #EBE8E0;
 }
 
-.logo h1 {
-  font-size: 28px;
-  font-weight: 600;
-  color: #fff;
-  letter-spacing: -0.5px;
-  font-family: 'Montserrat', sans-serif;
-  transition: color 0.45s var(--ease-smooth);
+/*--------------------------------------------------------------
+# LOGO (pajangan, tidak bisa diklik; latar cokelat tua agar terbaca di hero maupun header putih)
+--------------------------------------------------------------*/
+.logo {
+  display: inline-flex;
+  align-items: center;
+  background: var(--heading-color);
+  padding: 6px 14px;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(36, 23, 15, 0.18);
+  cursor: default;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
-.header-pill-toggle {
-  display: flex;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 50px;
-  padding: 4px;
-  border: 1px solid rgba(255,255,255,0.2);
-  transition: background-color 0.45s var(--ease-smooth), border-color 0.45s var(--ease-smooth);
+.logo-img {
+  height: 42px;
+  width: auto;
+  display: block;
+  pointer-events: none;
 }
-.header-pill-toggle span {
-  padding: 6px 20px;
-  border-radius: 50px;
-  color: #fff;
-  font-size: 13px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.35s var(--ease-smooth);
-}
-.header-pill-toggle span.active { background: #fff; color: var(--heading-color); }
-.header-pill-toggle.small-toggle span { padding: 6px 12px; }
 
 .navmenu ul { display: flex; list-style: none; gap: 35px; padding: 0; }
 .navmenu a {
@@ -147,13 +159,9 @@ h1, h2, h3, h4, h5, h6 { color: var(--heading-color); font-family: var(--heading
 .btn-outline-custom:hover { background: #fff; color: var(--heading-color); }
 
 /* Kondisi header setelah keluar dari hero (putih) */
-.header.scrolled .logo h1,
 .header.scrolled .navmenu a { color: var(--heading-color); }
 .header.scrolled .navmenu a:hover { color: var(--accent-color); }
 .header.scrolled .navmenu a.is-current { color: var(--accent-color); }
-.header.scrolled .header-pill-toggle { background: #f0f0f0; border-color: #ddd; }
-.header.scrolled .header-pill-toggle span { color: var(--default-color); }
-.header.scrolled .header-pill-toggle span.active { background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
 .header.scrolled .btn-outline-custom { border-color: var(--default-color); color: var(--default-color); }
 .header.scrolled .btn-outline-custom:hover { background: var(--accent-color); color: #fff; border-color: var(--accent-color); }
 .header.scrolled .mobile-nav-toggle { color: var(--heading-color) !important; }
@@ -190,14 +198,16 @@ h1, h2, h3, h4, h5, h6 { color: var(--heading-color); font-family: var(--heading
   background: color-mix(in srgb, var(--accent-color), #24170F 25%);
 }
 
-/* Hero Section */
+/*--------------------------------------------------------------
+# HERO
+--------------------------------------------------------------*/
 .hero {
-  background: linear-gradient(rgba(36, 23, 15, 0.5), rgba(36, 23, 15, 0.5)), url('../img/hero-bg.jpeg') center/cover no-repeat;
+  background: linear-gradient(rgba(36, 23, 15, 0.5), rgba(36, 23, 15, 0.5)), url('../img/hero-bg.jpg') center/cover no-repeat;
   height: 100vh;
   min-height: 650px;
   position: relative;
   margin-top: 0;
-  padding-top: 70px;
+  padding: 70px 0 80px;
 }
 .hero-title {
   font-size: 4.8rem;
@@ -239,14 +249,31 @@ h1, h2, h3, h4, h5, h6 { color: var(--heading-color); font-family: var(--heading
 @media (max-width: 991px) { .hero-title { font-size: 3.5rem; } .hero-subtitle { font-size: 1.1rem; } }
 @media (max-width: 576px) { .hero-title { font-size: 2.2rem; } .hero-subtitle { font-size: 1rem; } }
 
-/* Global Sections */
+/*--------------------------------------------------------------
+# JARAK ANTARBAGIAN
+# Setiap bagian hanya memakai padding atas (56px), sehingga jarak
+# antarbagian selalu 56px dan tidak dobel. Bagian Kontak memakai
+# padding bawah agar ada jarak sebelum footer.
+--------------------------------------------------------------*/
 section, .section {
-  padding: 80px 0;
+  padding: 56px 0 0;
   scroll-margin-top: 82px;
   overflow: clip;
 }
-.section-title { text-align: center; padding-bottom: 60px; position: relative; }
-.section-title h2 { font-size: 32px; font-weight: 700; margin-bottom: 20px; color: var(--heading-color); }
+
+.section-title {
+  text-align: center;
+  padding-bottom: 32px;
+  position: relative;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--heading-color);
+}
+
 .section-title h2:after {
   content: "";
   position: absolute;
@@ -264,7 +291,7 @@ section, .section {
 # ABOUT SECTION (Boxed Scenic Banner & Overlapping Vertical Cards)
 --------------------------------------------------------------*/
 .about-boxed-section {
-  padding: 80px 0 120px 0;
+  padding: 56px 0 0;
 }
 
 .scenic-banner-box {
@@ -386,7 +413,7 @@ section, .section {
 # VISION & MISSION (Kartu gradasi oranye-cokelat + daftar misi)
 --------------------------------------------------------------*/
 .vision-mission-section {
-  padding: 100px 0;
+  padding: 56px 0 0;
 }
 
 /* Kartu visi */
@@ -518,6 +545,7 @@ section, .section {
 --------------------------------------------------------------*/
 .products-section {
   background-color: var(--background-color);
+  padding: 56px 0 0;
 }
 
 .product-grid {
@@ -611,7 +639,7 @@ section, .section {
 
 .products-more {
   text-align: center;
-  margin-top: 50px;
+  margin-top: 32px;
 }
 
 .products-more-btn {
@@ -657,6 +685,7 @@ section, .section {
 --------------------------------------------------------------*/
 .team-section {
   background-color: var(--background-color);
+  padding: 56px 0 0;
 }
 
 .org-chart {
@@ -670,13 +699,13 @@ section, .section {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 40px 36px;
+  gap: 28px 36px;
   width: 100%;
 }
 
 .org-connector {
   width: 2px;
-  height: 44px;
+  height: 28px;
   background: #CFC6B8;
   margin: 0 auto;
 }
@@ -767,7 +796,7 @@ section, .section {
     width: 150px;
   }
   .org-tier {
-    gap: 28px 20px;
+    gap: 24px 20px;
   }
 }
 
@@ -776,6 +805,7 @@ section, .section {
 --------------------------------------------------------------*/
 .contact-section {
   background-color: var(--background-color);
+  padding: 56px 0;
 }
 
 .info-card {
@@ -887,12 +917,12 @@ section, .section {
 }
 
 /*--------------------------------------------------------------
-# FOOTER (Contact Us dengan latar foto + copyright)
+# FOOTER (Hubungi Kami dengan latar foto + hak cipta)
 --------------------------------------------------------------*/
 .footer-contact {
   position: relative;
-  padding: 90px 0 80px;
-  background: url('../img/hero-bg.jpeg') center/cover no-repeat;
+  padding: 56px 0 48px;
+  background: url('../img/hero-bg.jpg') center/cover no-repeat;
   color: #FFFFFF;
   overflow: hidden;
 }
@@ -906,6 +936,10 @@ section, .section {
 .footer-contact .container {
   position: relative;
   z-index: 1;
+}
+
+.footer-contact-header {
+  text-align: center;
 }
 
 .footer-contact-header h2 {
@@ -932,35 +966,59 @@ section, .section {
   background: var(--accent-color);
 }
 
+/* Kolom bootstrap dibuat selebar penuh agar daftar kontak berada di tengah */
+.footer-contact .row {
+  justify-content: center;
+}
+
+.footer-contact .row > [class*="col-"] {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+/* Tiga kontak dalam satu baris, lebar sama, jarak konsisten */
 .footer-contact-list {
-  margin-top: 56px;
-  max-width: 520px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px 48px;
+  max-width: 1040px;
+  margin: 48px auto 0;
+  text-align: center;
 }
 
 .footer-contact-item {
-  margin-bottom: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0 8px;
+  min-width: 0;
 }
 
 .footer-contact-label {
   display: flex;
   align-items: center;
-  gap: 12px;
-  font-size: 1.15rem;
+  justify-content: center;
+  gap: 10px;
+  font-size: 1.1rem;
   font-weight: 700;
   color: #FFFFFF;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .footer-contact-label i {
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   color: #F08A4B;
 }
 
 .footer-contact-item p {
-  margin: 0 0 0 34px;
+  margin: 0;
+  max-width: 280px;
   font-size: 1rem;
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.85);
+  text-align: center;
+  overflow-wrap: anywhere;
 }
 
 .footer-contact-item a {
@@ -972,15 +1030,24 @@ section, .section {
   color: #F08A4B;
 }
 
-/* Copyright bar */
+/* Bar hak cipta */
 .footer {
   background-color: var(--heading-color);
   color: #FFFFFF;
-  padding: 30px 0;
+  padding: 24px 0;
   margin-top: 0;
 }
 .footer .sitename { color: var(--accent-color); }
 .footer .credits { margin-top: 8px; font-size: 13px; color: rgba(255,255,255,0.6); }
+
+/* Di layar kecil, kontak menjadi satu kolom */
+@media (max-width: 767px) {
+  .footer-contact-list {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-top: 36px;
+  }
+}
 
 /*--------------------------------------------------------------
 # WHATSAPP FLOATING BUTTON
@@ -1007,6 +1074,298 @@ section, .section {
   color: #FFFFFF;
   transform: scale(1.08);
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.3);
+}
+
+/*--------------------------------------------------------------
+# HALAMAN DETAIL PRODUK (product.html)
+--------------------------------------------------------------*/
+.product-page-body {
+  padding-top: 90px;
+}
+
+.product-hero {
+  background: linear-gradient(rgba(20, 15, 10, 0.78), rgba(20, 15, 10, 0.78)), url('../img/GAS1.jpg') center/cover no-repeat;
+  color: #FFFFFF;
+  padding: 56px 0 48px;
+}
+
+.product-hero h1 {
+  color: #FFFFFF;
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin: 14px 0 12px;
+}
+
+.product-hero p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  max-width: 720px;
+  margin: 0;
+}
+
+.breadcrumb-custom {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.breadcrumb-custom a {
+  color: #FFFFFF;
+}
+
+.breadcrumb-custom a:hover {
+  color: #F08A4B;
+}
+
+.product-detail {
+  padding: 56px 0 40px;
+  background-color: var(--background-color);
+}
+
+.detail-image {
+  background: #FFFFFF;
+  border: 1px solid #EBE8E0;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 15px 35px rgba(36, 23, 15, 0.1);
+}
+
+.detail-image img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.detail-badge {
+  display: inline-block;
+  background: color-mix(in srgb, var(--accent-color), transparent 88%);
+  color: var(--accent-color);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 50px;
+}
+
+.detail-heading {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 18px 0 12px;
+}
+
+.detail-text {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--default-color);
+  margin: 0 0 12px;
+}
+
+.detail-sub {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 28px 0 12px;
+}
+
+.detail-features {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.detail-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  line-height: 1.6;
+  color: var(--default-color);
+}
+
+.detail-features i {
+  color: var(--accent-color);
+  font-size: 1.2rem;
+  margin-top: 2px;
+}
+
+.detail-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.btn-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #25D366;
+  color: #FFFFFF;
+  padding: 12px 26px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: transform 0.3s var(--ease-smooth);
+}
+
+.btn-wa:hover {
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+.btn-line {
+  border: 1.5px solid var(--accent-color);
+  color: var(--accent-color);
+  padding: 12px 26px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: background-color 0.3s var(--ease-smooth), color 0.3s var(--ease-smooth);
+}
+
+.btn-line:hover {
+  background: var(--accent-color);
+  color: #FFFFFF;
+}
+
+.detail-spec {
+  margin-top: 48px;
+}
+
+.detail-spec h3,
+.detail-other h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.spec-table {
+  width: 100%;
+  background: #FFFFFF;
+  border: 1px solid #EBE8E0;
+  border-radius: 12px;
+  overflow: hidden;
+  border-collapse: separate;
+  border-spacing: 0;
+  box-shadow: 0 10px 30px rgba(36, 23, 15, 0.06);
+}
+
+.spec-table th,
+.spec-table td {
+  padding: 16px 22px;
+  text-align: left;
+  border-bottom: 1px solid #EBE8E0;
+  font-size: 0.98rem;
+}
+
+.spec-table tr:last-child th,
+.spec-table tr:last-child td {
+  border-bottom: none;
+}
+
+.spec-table th {
+  width: 35%;
+  background: #FBF8F3;
+  color: var(--heading-color);
+  font-weight: 600;
+}
+
+.spec-table td {
+  color: var(--default-color);
+}
+
+.detail-note {
+  margin: 16px 0 0;
+  font-size: 0.9rem;
+  color: var(--default-color);
+  opacity: 0.8;
+}
+
+.detail-other {
+  margin-top: 48px;
+}
+
+.other-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.other-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #FFFFFF;
+  border: 1px solid #EBE8E0;
+  border-radius: 12px;
+  padding: 16px;
+  color: var(--heading-color);
+  transition: transform 0.4s var(--ease-smooth), border-color 0.4s var(--ease-smooth);
+}
+
+.other-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-color);
+  color: var(--heading-color);
+}
+
+.other-card img {
+  width: 96px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.other-card strong {
+  display: block;
+  font-size: 1.02rem;
+}
+
+.other-card span {
+  font-size: 0.85rem;
+  color: var(--default-color);
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 36px;
+  font-weight: 600;
+}
+
+@media (max-width: 767px) {
+  .product-hero h1 {
+    font-size: 2.1rem;
+  }
+  .other-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*--------------------------------------------------------------
+# RESPONSIF: jarak antarbagian lebih rapat di layar kecil
+--------------------------------------------------------------*/
+@media (max-width: 767px) {
+  .about-boxed-section,
+  .vision-mission-section,
+  .products-section,
+  .team-section {
+    padding-top: 40px;
+  }
+  .contact-section {
+    padding: 40px 0;
+  }
+  .section-title {
+    padding-bottom: 24px;
+  }
 }
 
 /*--------------------------------------------------------------

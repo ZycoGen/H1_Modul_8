@@ -8,6 +8,9 @@
   <meta name="description" content="Pabrik Manufaktur Tabung & Regulator LPG Terpercaya">
   <meta name="keywords" content="Tabung LPG, Regulator, Valve, Katup SNI, Selang Gas, Pabrik Gas">
 
+  <!-- Tandai halaman sedang dimuat agar bisa dibuat fade-in -->
+  <script>document.documentElement.classList.add('is-loading');</script>
+
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -32,13 +35,9 @@
   <!-- Header -->
   <header id="header" class="header fixed-top d-flex align-items-center">
     <div class="container-fluid px-4 px-lg-5 d-flex align-items-center justify-content-between w-100">
-      <div class="header-left d-flex align-items-center gap-4">
-        <a href="index.html" class="logo">
-          <h1 class="sitename m-0">PT MTU</h1>
-        </a>
-        <div class="header-pill-toggle d-none d-lg-flex">
-          <span class="active">Pabrik</span>
-          <span>Bisnis</span>
+      <div class="header-left d-flex align-items-center">
+        <div class="logo">
+          <img src="assets/img/Logo1.png" alt="PT MTU - Maju Teknik Utama Indonesia" class="logo-img">
         </div>
       </div>
       <nav id="navmenu" class="navmenu d-none d-xl-block">
@@ -50,10 +49,6 @@
         </ul>
       </nav>
       <div class="header-right d-flex align-items-center gap-3">
-        <div class="header-pill-toggle small-toggle d-none d-md-flex">
-          <span>EN</span>
-          <span class="active">ID</span>
-        </div>
         <a class="btn-outline-custom d-none d-md-inline-flex" href="#contact">Hubungi Kami</a>
         <i class="mobile-nav-toggle d-xl-none bi bi-list text-white fs-2"></i>
       </div>
@@ -65,7 +60,7 @@
     <!-- Hero Section -->
     <section id="hero" class="hero d-flex align-items-center justify-content-center">
       <div class="container text-center" data-aos="fade-up">
-        <h1 class="hero-title">Kehangatan & Kebahagiaan,<br>di Setiap Dapur Keluarga.</h1>
+        <h1 class="hero-title">Nyalakan keyakinan Anda,<br>Mulai Dari Setiap Tabung.</h1>
         <p class="hero-subtitle">Mendukung momen memasak aman dengan tabung dan regulator gas berstandar SNI terpercaya di setiap transaksi dan perakitan.</p>
         <div class="hero-cta mt-4">
           <a href="#services" class="hero-btn"><i class="bi bi-fire text-danger"></i> Jelajahi Produk</a>
@@ -231,27 +226,26 @@
             <img src="assets/img/produk-katup.jpeg" alt="Katup Tabung Baja LPG" class="product-img">
             <h3>Katup Tabung Baja LPG</h3>
             <p>PT Maju Teknik Utama Indonesia memproduksi katup presisi tinggi yang menjamin aliran gas stabil dan aman, lulus standarisasi kelayakan SNI 1591:2012.</p>
-            <a href="#contact" class="product-btn">Lihat Detail</a>
+            <a href="product.html?produk=katup" class="product-btn">Lihat Detail</a>
           </article>
 
           <article class="product-card" data-aos="fade-up" data-aos-delay="200">
             <img src="assets/img/produk-tabung.jpeg" alt="Tabung Baja LPG" class="product-img">
             <h3>Tabung Baja LPG</h3>
             <p>Struktur fabrikasi baja yang kuat untuk menyimpan tekanan gas dengan aman, mengacu pada sertifikasi SNI 1452:2011.</p>
-            <a href="#contact" class="product-btn">Lihat Detail</a>
+            <a href="product.html?produk=tabung" class="product-btn">Lihat Detail</a>
           </article>
 
           <article class="product-card" data-aos="fade-up" data-aos-delay="300">
             <img src="assets/img/produk-regulator.jpeg" alt="Regulator Tekanan Rendah" class="product-img">
             <h3>Regulator Tekanan Rendah</h3>
             <p>Regulator efisien yang mengatur pengeluaran gas secara presisi untuk kompor rumah tangga, sesuai SNI 7369:2012.</p>
-            <a href="#contact" class="product-btn">Lihat Detail</a>
+            <a href="product.html?produk=regulator" class="product-btn">Lihat Detail</a>
           </article>
 
         </div>
 
-       
-    </section>
+        
 
     <!-- Team / Struktur Section -->
     <section id="team" class="team-section light-background">
@@ -377,7 +371,7 @@
                 </li>
                 <li>
                   <span class="info-icon"><i class="bi bi-telephone-fill"></i></span>
-                  <span>082223728448</span>
+                  <span>021-88957132</span>
                 </li>
                 <li>
                   <span class="info-icon"><i class="bi bi-envelope-fill"></i></span>
@@ -394,7 +388,7 @@
                   <span>
                     <strong>Mekarsari</strong><br>
                     Jl. Raya Cileungsi-Jonggol Km. 5, Mekarsari, Cileungsi, Bogor 16820<br>
-                    Telp. 082223728448
+                    Telp. 021-82496133
                   </span>
                 </li>
                 <li>
@@ -402,7 +396,7 @@
                   <span>
                     <strong>Narogong</strong><br>
                     Jl. Raya Narogong Km. 18,5, Pasir Angin, Cileungsi, Bogor<br>
-                    Telp. 082223728448
+                    Telp. 021-22950122
                   </span>
                 </li>
               </ul>
@@ -435,12 +429,12 @@
 
   <footer id="footer" class="footer position-relative">
 
-    <!-- Contact Us (latar foto gelap) -->
+    <!-- Hubungi Kami (latar foto gelap) -->
     <div class="footer-contact">
       <div class="footer-contact-overlay"></div>
       <div class="container">
         <div class="footer-contact-header text-center" data-aos="fade-up">
-          <h2>Contact Us</h2>
+          <h2>Hubungi Kami</h2>
           <p>Hubungi kami untuk mengetahui lebih lanjut tentang tabung, regulator, dan solusi gas LPG berstandar SNI.</p>
           <span class="footer-accent-bar"></span>
         </div>
@@ -462,7 +456,7 @@
                   <i class="bi bi-telephone"></i>
                   <span>Telepon</span>
                 </div>
-                <p><a href="tel:+622188957132">(62) 82223728448</a></p>
+                <p><a href="tel:+622188957132">(021) 88957132</a></p>
               </div>
 
               <div class="footer-contact-item">
@@ -479,9 +473,9 @@
       </div>
     </div>
 
-    <!-- Copyright -->
+    <!-- Hak Cipta -->
     <div class="container copyright text-center">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">PT Maju Teknik Utama Indonesia</strong> <span>All Rights Reserved</span></p>
+      <p>© <span>Hak Cipta</span> <strong class="px-1 sitename">PT Maju Teknik Utama Indonesia</strong> <span>Seluruh hak dilindungi</span></p>
     </div>
   </footer>
 
@@ -495,7 +489,9 @@
     <i class="bi bi-whatsapp"></i>
   </a>
 
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center" aria-label="Kembali ke atas">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -505,24 +501,96 @@
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/js/main.js"></script>
 
-  <!-- Header: putih setelah keluar dari hero -->
+  <!-- Transisi & interaksi halaman -->
   <script>
     (function () {
       var header = document.getElementById('header');
       var hero = document.getElementById('hero');
+      var scrollTopBtn = document.getElementById('scroll-top');
+      var navLinks = document.querySelectorAll('#navmenu a[href^="#"]');
 
+      /* 1. Header berubah putih setelah melewati hero */
       function updateHeader() {
-        // Header berubah putih setelah melewati bagian hero
         var limit = hero ? hero.offsetHeight - header.offsetHeight : 0;
-        if (window.scrollY >= limit) {
-          header.classList.add('scrolled');
-        } else {
-          header.classList.remove('scrolled');
-        }
+        header.classList.toggle('scrolled', window.scrollY >= limit);
       }
 
-      window.addEventListener('scroll', updateHeader, { passive: true });
-      updateHeader();
+      /* 2. Tombol kembali ke atas muncul setelah scroll */
+      function updateScrollTop() {
+        scrollTopBtn.classList.toggle('active', window.scrollY > 400);
+      }
+
+      function onScroll() {
+        updateHeader();
+        updateScrollTop();
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      /* 3. Scroll halus dengan offset header, untuk semua link jangkar */
+      document.addEventListener('click', function (e) {
+        var link = e.target.closest('a[href^="#"]');
+        if (!link) return;
+
+        var id = link.getAttribute('href');
+
+        if (id === '#') {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          return;
+        }
+
+        var target = document.querySelector(id);
+        if (!target) return;
+
+        e.preventDefault();
+        var offset = header.offsetHeight + 10;
+        var top = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+        history.replaceState(null, '', id);
+      });
+
+      /* 4. Menu aktif mengikuti bagian yang sedang terlihat */
+      function setActive(id) {
+        navLinks.forEach(function (link) {
+          link.classList.toggle('is-current', link.getAttribute('href') === '#' + id);
+        });
+      }
+
+      if ('IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) setActive(entry.target.id);
+          });
+        }, { rootMargin: '-45% 0px -50% 0px' });
+
+        document.querySelectorAll('main section[id]').forEach(function (section) {
+          observer.observe(section);
+        });
+      }
+
+      /* 5. Animasi masuk elemen dengan easing yang lebih lembut */
+      if (window.AOS) {
+        AOS.init({
+          duration: 900,
+          easing: 'ease-out-cubic',
+          once: true,
+          offset: 60
+        });
+      }
+
+      /* 6. Fade-in halaman segera setelah HTML siap, tanpa menunggu gambar */
+      function finishLoading() {
+        document.documentElement.classList.remove('is-loading');
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', finishLoading);
+      } else {
+        finishLoading();
+      }
+      setTimeout(finishLoading, 1500); // pengaman tambahan
     })();
   </script>
 

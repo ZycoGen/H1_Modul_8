@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Detail Produk | PT Maju Teknik Utama Indonesia</title>
+  <meta name="description" content="Detail produk PT Maju Teknik Utama Indonesia: katup, tabung, dan regulator LPG berstandar SNI.">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body class="product-page-body">
+
+  <!-- Header -->
+  <header id="header" class="header scrolled fixed-top d-flex align-items-center">
+    <div class="container-fluid px-4 px-lg-5 d-flex align-items-center justify-content-between w-100">
+      <div class="header-left d-flex align-items-center">
+        <div class="logo">
+          <img src="assets/img/Logo1.png" alt="PT MTU - Maju Teknik Utama Indonesia" class="logo-img">
+        </div>
+      </div>
+      <nav id="navmenu" class="navmenu d-none d-xl-block">
+        <ul class="mb-0">
+          <li><a href="index.html#about">Sejarah</a></li>
+          <li><a href="index.html#vision-mission">Visi & Misi</a></li>
+          <li><a href="index.html#services">Produk SNI</a></li>
+          <li><a href="index.html#team">Struktur</a></li>
+        </ul>
+      </nav>
+      <div class="header-right d-flex align-items-center gap-3">
+        <a class="btn-outline-custom d-none d-md-inline-flex" href="index.html#contact">Hubungi Kami</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Banner produk -->
+    <section class="product-hero">
+      <div class="container">
+        <nav class="breadcrumb-custom" aria-label="Breadcrumb">
+          <a href="index.html">Beranda</a>
+          <i class="bi bi-chevron-right"></i>
+          <a href="index.html#services">Produk</a>
+          <i class="bi bi-chevron-right"></i>
+          <span id="crumb"></span>
+        </nav>
+        <h1 id="p-title"></h1>
+        <p id="p-lead"></p>
+      </div>
+    </section>
+
+    <!-- Detail produk -->
+    <section class="product-detail">
+      <div class="container">
+
+        <div class="row g-5 align-items-start">
+          <div class="col-lg-6">
+            <div class="detail-image">
+              <img id="p-img" src="" alt="">
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <span class="detail-badge" id="p-badge"></span>
+            <h2 class="detail-heading">Deskripsi Produk</h2>
+            <div id="p-desc"></div>
+
+            <h3 class="detail-sub">Keunggulan</h3>
+            <ul class="detail-features" id="p-features"></ul>
+
+            <div class="detail-cta">
+              <a id="p-wa" class="btn-wa" href="#" target="_blank" rel="noopener">
+                <i class="bi bi-whatsapp"></i> Tanya via WhatsApp
+              </a>
+              <a href="index.html#contact" class="btn-line">Hubungi Kami</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Spesifikasi -->
+        <div class="detail-spec">
+          <h3>Spesifikasi</h3>
+          <table class="spec-table">
+            <tbody id="p-spec"></tbody>
+          </table>
+          <p class="detail-note">Spesifikasi teknis lengkap (dimensi, tekanan kerja, dan kapasitas) dapat diminta langsung dari tim kami.</p>
+        </div>
+
+        <!-- Produk lainnya -->
+        <div class="detail-other">
+          <h3>Produk Lainnya</h3>
+          <div class="other-grid" id="p-other"></div>
+        </div>
+
+        <a href="index.html#services" class="back-link">
+          <i class="bi bi-arrow-left"></i> Kembali ke daftar produk
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer" class="footer position-relative">
+    <div class="container copyright text-center">
+      <p>© <span>Hak Cipta</span> <strong class="px-1 sitename">PT Maju Teknik Utama Indonesia</strong> <span>Seluruh hak dilindungi</span></p>
+    </div>
+  </footer>
+
+  <!-- Tombol WhatsApp melayang -->
+  <a href="https://wa.me/6282223728448?text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20produk%20PT%20Maju%20Teknik%20Utama%20Indonesia."
+     class="whatsapp-float"
+     target="_blank"
+     rel="noopener"
+     aria-label="Chat WhatsApp dengan PT Maju Teknik Utama Indonesia">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
+  <script>
+    (function () {
+      document.documentElement.classList.remove('is-loading');
+
+      var DATA = {
+        katup: {
+          nama: 'Katup Tabung Baja LPG',
+          img: 'assets/img/produk-katup.jpeg',
+          lead: 'Katup presisi tinggi yang menjamin aliran gas stabil dan aman pada tabung baja LPG.',
+          badge: 'SNI 1591:2012',
+          deskripsi: [
+            'Katup tabung baja LPG diproduksi dengan toleransi presisi agar aliran gas tetap stabil dari tabung ke jalur distribusi.',
+            'Setiap proses produksi diawasi oleh divisi QA/QC dengan mengacu pada SNI 1591:2012 tentang katup tabung baja LPG.'
+          ],
+          fitur: [
+            'Aliran gas stabil dan terkendali',
+            'Sambungan presisi untuk mengurangi risiko kebocoran',
+            'Diproduksi mengacu pada SNI 1591:2012',
+            'Proses produksi berpedoman ISO 9001:2015'
+          ],
+          spec: [
+            ['Standar', 'SNI 1591:2012'],
+            ['Jenis', 'Katup tabung baja LPG'],
+            ['Aplikasi', 'Tabung baja LPG rumah tangga dan industri'],
+            ['Sistem mutu', 'ISO 9001:2015']
+          ]
+        },
+        tabung: {
+          nama: 'Tabung Baja LPG',
+          img: 'assets/img/produk-tabung.jpeg',
+          lead: 'Struktur fabrikasi baja yang kuat untuk menyimpan tekanan gas LPG dengan aman.',
+          badge: 'SNI 1452:2011',
+          deskripsi: [
+            'Tabung baja LPG dirancang untuk menahan tekanan gas dengan struktur dinding baja yang kuat dan terukur.',
+            'Fabrikasi mengacu pada sertifikasi SNI 1452:2011 tentang tabung baja LPG.'
+          ],
+          fitur: [
+            'Struktur baja kuat untuk menahan tekanan gas',
+            'Fabrikasi mengacu pada SNI 1452:2011',
+            'Pengendalian mutu di setiap tahap produksi',
+            'Diproduksi dengan sistem mutu ISO 9001:2015'
+          ],
+          spec: [
+            ['Standar', 'SNI 1452:2011'],
+            ['Jenis', 'Tabung baja LPG'],
+            ['Bahan', 'Baja'],
+            ['Aplikasi', 'Penyimpanan gas LPG rumah tangga dan industri']
+          ]
+        },
+        regulator: {
+          nama: 'Regulator Tekanan Rendah',
+          img: 'assets/img/produk-regulator.jpeg',
+          lead: 'Regulator efisien yang mengatur pengeluaran gas LPG secara presisi untuk kompor rumah tangga.',
+          badge: 'SNI 7369:2012',
+          deskripsi: [
+            'Regulator tekanan rendah menjaga tekanan gas yang keluar dari tabung tetap konstan, sehingga nyala kompor lebih stabil.',
+            'Produk diproduksi sesuai SNI 7369:2012 tentang regulator tekanan rendah.'
+          ],
+          fitur: [
+            'Tekanan keluar gas stabil dan teratur',
+            'Nyala api kompor lebih konsisten',
+            'Diproduksi mengacu pada SNI 7369:2012',
+            'Komponen presisi untuk penggunaan rumah tangga'
+          ],
+          spec: [
+            ['Standar', 'SNI 7369:2012'],
+            ['Jenis', 'Regulator tekanan rendah'],
+            ['Aplikasi', 'Kompor gas rumah tangga'],
+            ['Sistem mutu', 'ISO 9001:2015']
+          ]
+        }
+      };
+
+      var params = new URLSearchParams(window.location.search);
+      var key = DATA[params.get('produk')] ? params.get('produk') : 'katup';
+      var p = DATA[key];
+
+      document.title = p.nama + ' | PT Maju Teknik Utama Indonesia';
+      document.getElementById('crumb').textContent = p.nama;
+      document.getElementById('p-title').textContent = p.nama;
+      document.getElementById('p-lead').textContent = p.lead;
+
+      var img = document.getElementById('p-img');
+      img.src = p.img;
+      img.alt = p.nama;
+
+      document.getElementById('p-badge').textContent = p.badge;
+
+      document.getElementById('p-desc').innerHTML = p.deskripsi
+        .map(function (t) { return '<p class="detail-text">' + t + '</p>'; })
+        .join('');
+
+      document.getElementById('p-features').innerHTML = p.fitur
+        .map(function (f) { return '<li><i class="bi bi-check-circle-fill"></i><span>' + f + '</span></li>'; })
+        .join('');
+
+      document.getElementById('p-spec').innerHTML = p.spec
+        .map(function (r) { return '<tr><th>' + r[0] + '</th><td>' + r[1] + '</td></tr>'; })
+        .join('');
+
+      var waText = encodeURIComponent('Halo, saya ingin bertanya tentang ' + p.nama + ' PT Maju Teknik Utama Indonesia.');
+      document.getElementById('p-wa').href = 'https://wa.me/6282223728448?text=' + waText;
+
+      var others = Object.keys(DATA).filter(function (k) { return k !== key; });
+      document.getElementById('p-other').innerHTML = others
+        .map(function (k) {
+          return '<a class="other-card" href="product.html?produk=' + k + '">' +
+            '<img src="' + DATA[k].img + '" alt="' + DATA[k].nama + '">' +
+            '<div><strong>' + DATA[k].nama + '</strong><span>' + DATA[k].badge + '</span></div>' +
+            '</a>';
+        })
+        .join('');
+    })();
+  </script>
+
+</body>
+</html>
